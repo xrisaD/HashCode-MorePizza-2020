@@ -1,8 +1,12 @@
 import in_out_files,solve
-example = "b_small" "a_example"
+example = "a_example"
 small = "b_small"
-big
-name = example
+medium = "c_medium"
+quite_big = "d_quite_big"
+also_big = "e_also_big"
+
+name = medium
+
 m, pizzas = in_out_files.read_file(name+".in")
 vector = solve.brute_force(m,pizzas)
 print(vector)

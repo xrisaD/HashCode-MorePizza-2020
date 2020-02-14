@@ -30,3 +30,17 @@ def solveR(M , pizzas, n):
             return sol1
         else:
             return sol2
+
+def greedy_algorithm(M, pizzas):
+    vector_new = [0]*len(pizzas)
+    maxi = M
+    tmp = list(range(len(pizzas)))
+    tmp.reverse()
+    for i in tmp:
+        value = pizzas[i]
+        if(value<=maxi):
+            vector_new[i] = 1
+            maxi = maxi - value
+        else:
+             vector_new[i] = 0
+    return vector_new    
