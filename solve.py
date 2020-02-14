@@ -9,7 +9,7 @@ def brute_force(M , pizzas):
     """
     return solveR( M , pizzas , len(pizzas))
 
-def brute_forceR(M , pizzas, n):
+def solveR(M , pizzas, n):
     # Base Case 
     if n == 0 or M == 0 : 
         return []
