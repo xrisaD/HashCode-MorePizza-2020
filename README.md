@@ -14,4 +14,4 @@ D – quite big 999,999,932 points
 <br>
 E – also big 505,000,000 points
 <br>
-Total score 1.505.004.548
+**Total score 1.505.004.548**
