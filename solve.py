@@ -1,3 +1,4 @@
+#algorithm 1
 def brute_force(M , pizzas):
     """
     Input M : amount of slices wanted
@@ -7,6 +8,7 @@ def brute_force(M , pizzas):
     Returns a 0 - 1 vector containing the
     final solution's choice of pizzas.
     """
+
     return solveR( M , pizzas , len(pizzas))
 
 def solveR(M , pizzas, n):
@@ -30,6 +32,26 @@ def solveR(M , pizzas, n):
             return sol1
         else:
             return sol2
+
+#algorithm 2        
+def many_greedy(M, pizzas):
+    """
+    Input M : amount of slices wanted
+    pizzas : vector containing elements si where si is the amount of slices 
+    in pizza i
+    
+    Returns a 0 - 1 vector containing the
+    final solution's choice of pizzas.
+    """
+    min_score = M
+    for i in range(int(len(pizzas)/2)):
+        res,score = greedy_algorithm(M,pizzas)
+        if(score<min_score):
+            min_score = score
+            min_res = res
+        pizzas.pop()
+    return min_res
+
 def greedy_algorithm(M, pizzas):
     vector_new = [0]*len(pizzas)
     maxi = M
@@ -42,13 +64,6 @@ def greedy_algorithm(M, pizzas):
             maxi = maxi - value
         else:
              vector_new[i] = 0
-    return vector_new, maxi  
-def something_different(M, pizzas):
-    min_score = M
-    for i in range(int(len(pizzas)/2)):
-        res,score = greedy_algorithm(M,pizzas)
-        if(score<min_score):
-            min_score = score
-            min_res = res
-        pizzas.pop()
-    return min_res
+    return vector_new, maxi
+
+
