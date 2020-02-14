@@ -13,6 +13,5 @@ def write_file(name,vector):
     string = str(len(res_index)) + "\n"
     list_to_string = ' '.join([str(elem) for elem in res_index])
     string += list_to_string
-    print(string)
     f.write(string)
     f.close()
