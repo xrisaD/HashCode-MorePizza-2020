@@ -1,4 +1,4 @@
-def solve(M , pizzas):
+def brute_force(M , pizzas):
     """
     Input M : amount of slices wanted
     pizzas : vector containing elements si where si is the amount of slices 
@@ -9,8 +9,7 @@ def solve(M , pizzas):
     """
     return solveR( M , pizzas , len(pizzas))
 
-def solveR(M , pizzas, n):
-    
+def brute_forceR(M , pizzas, n):
     # Base Case 
     if n == 0 or M == 0 : 
         return []
